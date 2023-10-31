@@ -140,7 +140,6 @@ a {
 .hero-summary {
     display: flex;
     flex-direction: column;
-    gap: 14px;
     position: absolute;
     right: 0;
     bottom: 48px;
@@ -153,6 +152,10 @@ a {
 
 .hero-summary .item {
     display: flex;
+}
+
+.hero-summary .item + .item {
+    margin-top: 27px;
 }
 
 .hero-summary .item .icon {
@@ -196,9 +199,8 @@ a {
     letter-spacing: -1.16px;
 }
 
-.hero .content-block .desc {
+.hero .desc {
     margin-top: 22px;
-    /* margin: 22px 0; */
     color: #5f5b53;
     font-size: 18px;
     font-weight: 400;
