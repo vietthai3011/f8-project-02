@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --font-heading: sen, sans-serif;
+    --primary-color: #ffb900;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+/* Các thẻ button, input, textarea, select có thuộc tính font-family mặc định nên ưu tiên hơn so với font-family chúng ta set ở body. */
+/* Trong đó, inherit nghĩa là kế thừa. Lúc này, font của button sẽ kế thừa từ thẻ cha gần nhất có font-family */
+button {
+    font-family: inherit;
+}
+
+/* ================== Common ============= */
+
+.main-content {
+    width: 1170px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 118px;
+    padding: 0 16px;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 24.5px;
+    background: #171100;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* ================ Header =============== */
+.header {
+    background: #fffcf4;
+}
+
+.fixed {
+    position: sticky;
+    top: -28px;
+    z-index: 1;
+}
+
+.header .body {
+    display: flex;
+    align-items: center;
+    padding: 36px 0 8px;
+}
+
+.header .nav {
+    margin-left: auto;
+}
+
+.header .nav ul {
+    display: flex;
+}
+
+.header .nav a {
+    position: relative;
+    color: #5f5b53;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.75;
+    padding: 8px 21px;
+}
+
+.header .nav li:hover a,
+.header .nav li:active a {
+    color: #171100;
+    font-size: 16px;
+
+    /* Để text-shadow khi hover vào sẽ không bị lay chuyển các phần tử xung quanh ( font-weight: 600; làm chữ to ra đẩy các phần gtuwr xung quyanh ) */
+    /* font-weight: 600; */
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.header .nav li.active a::after {
+    position: absolute;
+    bottom: 6px;
+    left: 21px;
+
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 2px;
+    border-radius: 1px;
+    background: #171100;
+}
+
+.header .action .sing-up-btn {
+    min-width: 144px;
+}
+
+.header .action {
+    margin-left: 39px;
+}
+
+/* ================== Hero ================ */
+.hero {
+    padding: 56px 0 65px;
+    background: #fffcf4;
+}
+
+.hero .body {
+    display: flex;
+}
+
+.hero .media-block {
+    position: relative;
+    width: 48%;
+}
+
+.hero .media-block .img {
+    width: 470px;
+    height: 685px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.hero-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: absolute;
+    right: 0;
+    bottom: 48px;
+    width: 270px;
+    padding: 28px 24px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+}
+
+.hero-summary .item {
+    display: flex;
+}
+
+.hero-summary .item .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.hero-summary .item .info {
+    margin-left: 16px;
+}
+
+.hero-summary .item .info .label {
+    color: #5f5b53;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.86;
+}
+
+.hero-summary .item .info .title {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+}
+
+.hero .content-block {
+    width: 52%;
+    padding: 64px 0 0 130px;
+}
+
+.hero .content-block .heading {
+    color: #171100;
+    font-family: var(--font-heading);
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: -1.16px;
+}
+
+.hero .content-block .desc {
+    margin-top: 22px;
+    /* margin: 22px 0; */
+    color: #5f5b53;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.67;
+}
+
+.hero .content-block .cta-group {
+    display: flex;
+    align-items: center;
+    margin: 38px 0 48px;
+}
+
+.cta-group-btn {
+    min-width: 180px;
+    border-radius: 32px;
+    background: var(--primary-color);
+    line-height: 64px;
+}
+
+.hero .content-block .watch-video {
+    display: flex;
+    align-items: center;
+    margin-left: 28px;
+    column-gap: 14px;
+    border: none;
+    background: #fffcf4;
+    cursor: pointer;
+}
+
+.content-block .watch-video .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ab8620;
+    background: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.07);
+}
+
+.hero .watch-video span {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+}
+
+.hero .stats {
+    /* Margin-left= -28px để số 50k về đúng vị trí do padding-left= 28px của strong đẩy  */
+    margin: 8px 0 0 -28px;
+}
+
+.content-block .stats strong {
+    padding-right: 14px;
+
+    /* Padding-left để số 70+ cách 28px chũ Students  */
+    padding-left: 28px;
+    color: #171100;
+    font-family: var(--font-heading);
+    font-size: 4.4rem;
+    font-weight: 700;
+}
