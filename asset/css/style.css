@@ -50,6 +50,45 @@ a {
     opacity: 0.9;
 }
 
+.heading {
+    color: #171100;
+    font-family: var(--font-heading);
+    letter-spacing: -1.16px;
+    font-weight: 700;
+}
+
+.heading.heading-1 {
+    font-size: 5.8rem;
+    line-height: 1.17;
+}
+
+.heading.heading-2 {
+    font-size: 38px;
+    line-height: 1.26;
+}
+
+.desc {
+    color: #5f5b53;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67;
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp.line-2 {
+    --line-clamp: 2;
+}
+
+.word-break-all {
+    word-break: break-all;
+}
+
 /* ================ Header =============== */
 .header {
     background: #fffcf4;
@@ -135,16 +174,18 @@ a {
     height: 685px;
     border-radius: 20px;
     object-fit: cover;
+    vertical-align: bottom;
 }
 
 .hero-summary {
     display: flex;
     flex-direction: column;
+    gap: 22px;
     position: absolute;
     right: 0;
     bottom: 48px;
     width: 270px;
-    padding: 28px 24px;
+    padding: 24px;
     border-radius: 12px;
     background: #fff;
     box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
@@ -152,11 +193,12 @@ a {
 
 .hero-summary .item {
     display: flex;
+    align-items: center;
 }
 
-.hero-summary .item + .item {
-    margin-top: 27px;
-}
+/* .hero-summary .item + .item {
+    margin-top: 22px;
+} */
 
 .hero-summary .item .icon {
     display: flex;
@@ -190,21 +232,13 @@ a {
     padding: 64px 0 0 130px;
 }
 
-.hero .content-block .heading {
-    color: #171100;
-    font-family: var(--font-heading);
-    font-size: 58px;
-    font-weight: 700;
-    line-height: 1.17;
-    letter-spacing: -1.16px;
-}
-
 .hero .desc {
     margin-top: 22px;
-    color: #5f5b53;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.67;
+}
+
+.hero .stats {
+    /* Margin-left= -28px để số 50k về đúng vị trí do padding-left= 28px của strong đẩy  */
+    margin: 8px 0 0 -28px;
 }
 
 .hero .content-block .cta-group {
@@ -249,11 +283,6 @@ a {
     line-height: 1.67;
 }
 
-.hero .stats {
-    /* Margin-left= -28px để số 50k về đúng vị trí do padding-left= 28px của strong đẩy  */
-    margin: 8px 0 0 -28px;
-}
-
 .content-block .stats strong {
     padding-right: 14px;
 
@@ -263,4 +292,128 @@ a {
     font-family: var(--font-heading);
     font-size: 4.4rem;
     font-weight: 700;
+}
+
+/* ======================= Popular =========================== */
+
+/* popular-top */
+
+.popular {
+    margin-top: 200px;
+}
+
+.popular-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular-top .desc {
+    margin-top: 16px;
+    width: 458px;
+}
+
+.popular-top .controls {
+    display: flex;
+    gap: 18px;
+}
+
+.popular-top .control-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.popular-top .control-btn:hover {
+    color: #fff;
+    background: var(--primary-color);
+}
+
+/* course-list */
+
+.course-list {
+    margin-top: 55px;
+    display: flex;
+    gap: 30px;
+}
+
+.course-list .course-item {
+    flex: 1;
+    border-radius: 12px;
+    border: 2px solid #e2dfda;
+}
+
+.course-list .course-item:hover {
+    border-color: transparent;
+    box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.1);
+    transform: 0.2s;
+}
+
+.course-list .thumb {
+    width: calc(100% + 2px);
+    height: 278px;
+    border-radius: 12px 12px 0px 0px;
+    object-fit: cover;
+
+    /* Để 100% thì viền border đè lên bức ảnh, nên dùng margin: -1px; để ảnh lên trên
+và phải cộng thêm 2px ( của border ) vào width để ảnh vừa với viền */
+    margin: -1px;
+}
+
+.course-list .info {
+    padding: 16px 22px 22px;
+}
+
+.course-list .info .head,
+.course-list .head .rating,
+.course-list .info .foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.course-list .head .title a {
+    padding-right: 6px;
+    color: #171100;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.67;
+}
+
+.course-list .rating .value {
+    padding-left: 6px;
+}
+
+.course-list .info .desc {
+    margin-top: 6px;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+
+.course-list .info .foot {
+    margin-top: 12px;
+}
+
+.course-list .foot .price {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+}
+
+.course-list .foot .book-btn {
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.course-list .foot .book-btn:hover {
+    background: var(--primary-color);
 }
