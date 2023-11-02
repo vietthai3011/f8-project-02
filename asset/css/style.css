@@ -417,3 +417,78 @@ và phải cộng thêm 2px ( của border ) vào width để ảnh vừa với 
 .course-list .foot .book-btn:hover {
     background: var(--primary-color);
 }
+
+/* ====================== Feedback ================== */
+
+.feedback {
+    padding: 96px;
+    margin-top: 200px;
+    background: #2e2100;
+}
+
+.feedback-list {
+    display: flex;
+    overflow: hidden;
+}
+
+.feedback .feedback-item {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.feedback .info .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feedback .info .title {
+    margin-top: 18px;
+    color: #f7f7f7;
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.42;
+}
+
+.feedback .info .desc {
+    margin-top: 4px;
+    color: #bfbcb2;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+
+.feedback .info .dots {
+    display: flex;
+    margin-top: 28px;
+    gap: 6px;
+}
+
+.feedback .info .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(99, 71, 0, 1);
+    cursor: pointer;
+}
+
+.feedback .info .dot.active {
+    background: rgba(255, 185, 0, 1);
+    cursor: default;
+}
+
+.feedback .content {
+    width: 66%;
+}
+
+.feedback .content blockquote {
+    margin-left: 30px;
+    color: #fff;
+    font-size: 2.6rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.56;
+}
