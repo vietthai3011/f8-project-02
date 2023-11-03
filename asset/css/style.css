@@ -7,6 +7,11 @@
     --primary-color: #ffb900;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -53,16 +58,17 @@ a {
 .heading {
     color: #171100;
     font-family: var(--font-heading);
-    letter-spacing: -1.16px;
     font-weight: 700;
 }
 
 .heading.heading-1 {
+    letter-spacing: -1.16px;
     font-size: 5.8rem;
     line-height: 1.17;
 }
 
 .heading.heading-2 {
+    letter-spacing: -0.76px;
     font-size: 38px;
     line-height: 1.26;
 }
@@ -299,7 +305,8 @@ a {
 /* popular-top */
 
 .popular {
-    margin-top: 200px;
+    padding: 96px 0;
+    margin-top: 104px;
 }
 
 .popular-top {
@@ -421,8 +428,8 @@ và phải cộng thêm 2px ( của border ) vào width để ảnh vừa với 
 /* ====================== Feedback ================== */
 
 .feedback {
-    padding: 96px;
-    margin-top: 200px;
+    padding: 96px 0;
+    margin-top: 104px;
     background: #2e2100;
 }
 
@@ -491,4 +498,268 @@ và phải cộng thêm 2px ( của border ) vào width để ảnh vừa với 
     font-style: italic;
     font-weight: 400;
     line-height: 1.56;
+}
+
+/* ======================= Features ================== */
+
+.features {
+    margin-top: 104px;
+    padding: 96px 0;
+}
+
+.features .body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.features .body .image {
+    display: flex;
+    gap: 0 30px;
+}
+
+.features .image img {
+    width: 270px;
+    height: 404px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.features .image img:nth-child(1) {
+    margin-top: 34px;
+}
+
+.features .body .content {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; */
+    width: 40%;
+}
+
+.features .content .desc {
+    margin-top: 16px;
+    font-size: 1.6rem;
+    line-height: 1.75;
+}
+
+.features .content .btn {
+    margin-top: 32px;
+    background: var(--primary-color);
+    min-width: 17.3rem;
+}
+
+/* ======================= Features-2nd ================== */
+
+.features-2nd .body {
+    flex-direction: row-reverse;
+}
+
+.features-2nd .body .content {
+    width: 49%;
+}
+
+.features-2nd .body .image img {
+    width: 470px;
+    height: 440px;
+}
+/* ===================== Blog ======================= */
+
+.blog {
+    margin-top: 104px;
+    background: #fffcf4;
+    padding: 96px 0;
+}
+
+.blog .blog-top {
+    text-align: center;
+}
+
+.blog .blog-top .desc {
+    margin: 16px auto 0;
+    width: 448px;
+    color: #696262;
+    font-size: 1.6rem;
+    line-height: 1.75;
+}
+
+.blog .blog-list {
+    display: flex;
+    gap: 30px;
+    margin-top: 55px;
+    overflow: hidden;
+}
+/* gap:30px; 2 bên là 60px, lấy 60px chia 3 item là ra 20px. Nên phải trừ đi 20px để ra mỗi item */
+.blog .blog-list .item {
+    flex-shrink: 0;
+    width: calc(100% / 3 - 20px);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.blog .blog-list .item:hover {
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+    transition: 0.1s;
+}
+
+.blog .item .thumb {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.blog .item .info {
+    padding: 20px 20px 28px;
+}
+
+/* display: inline-flex; để thẻ vừa có dispalay: flex vs inline */
+.blog .info .date {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 12px;
+    color: #5f5b53;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.86;
+}
+
+.blog .info .date::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    margin-right: 4px;
+}
+
+/* right: -27px; để thanh ngang luôn dài hơn phần chữ 27px cho dù chữ dài đến đâu */
+.blog .info .date::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: -27px;
+    content: "";
+    display: inline-block;
+    width: 160px;
+    height: 1px;
+    border-radius: 50%;
+    background: #e2dfda;
+}
+
+.blog .info .title a {
+    display: inline-block;
+    margin: 12px 0;
+    color: #171100;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.75;
+}
+
+.blog .info .btn {
+    font-size: 1.4rem;
+}
+
+.blog .info .btn:hover {
+    background: var(--primary-color);
+    transition: 0.1s;
+}
+
+.blog .dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 38px;
+}
+
+.blog .dots .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(95, 91, 83, 1);
+    cursor: pointer;
+}
+
+.blog .dots .dot.active {
+    cursor: default;
+    background: var(--primary-color);
+}
+
+/* ======================= Footer ================= */
+
+.footer {
+    background: #2e2100;
+    padding-top: 96px;
+}
+
+.footer .row {
+    display: flex;
+    padding-bottom: 38px;
+    border-bottom: 1px solid #59554b;
+}
+
+.footer .row .column {
+    width: calc(66% / 3);
+}
+
+.footer .row .column:first-child {
+    width: 35%;
+}
+
+.footer .column .desc {
+    margin: 18px 0;
+    width: 267px;
+    color: #bfbcb2;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+
+.footer .column .socials {
+    display: flex;
+    gap: 18px;
+}
+
+.footer .column .title {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.75;
+    padding: 0 48px 14px 0;
+    border-bottom: 1px solid #59554b;
+}
+
+.footer .column .list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    margin-top: 28px;
+}
+
+.footer .column a {
+    color: #bfbcb2;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.86;
+}
+
+.footer .column strong {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.86;
+}
+
+.footer .copyright {
+    padding: 28px 0;
+}
+
+.footer .copyright p {
+    color: #807d74;
+    text-align: center;
+    font-size: 1.4;
+    font-weight: 400;
+    line-height: 1.86;
 }
